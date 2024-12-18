@@ -1,0 +1,53 @@
+.button {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  color: hsl(var(--color-neutral-100));
+  background-color: hsl(var(--color-primary-cyan));
+  transition: background-color 300ms ease-in-out;
+}
+
+.button:hover,
+.button--disabled {
+  background-color: #9ae3e3;
+}
+
+.button--round-sm {
+  border-radius: 0.3125rem;
+}
+
+.button--round-md {
+  border-radius: 0.625rem;
+}
+
+.button--rounded {
+  border-radius: 999rem;
+}
+
+.button--default {
+  padding: 0.875rem 1rem 0.75rem;
+  font-size: 1.25rem;
+  width: 12.375rem;
+  height: 3.5rem;
+}
+
+.button--sm {
+  width: 6.5625rem;
+  height: 2.5rem;
+  padding: 0.625rem 1rem 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.button--md {
+  width: 17.5rem;
+  height: 3rem;
+  padding: 0.75rem 1rem 0.625rem;
+  font-size: 1.125rem;
+}
+
+.button--lg {
+  width: 11.75rem;
+  height: 4rem;
+  padding: 1.125rem 1.25rem 1rem;
+  font-size: 1.25rem;
+}
