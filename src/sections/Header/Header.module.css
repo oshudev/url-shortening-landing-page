@@ -1,0 +1,153 @@
+.header {
+  padding: 2.5rem 1.5rem;
+}
+
+.header :global(.container) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2px;
+}
+
+.header__logo {
+  display: inline-flex;
+}
+
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: 1.875rem;
+  margin-inline: 2.75rem auto;
+}
+
+.header__item a {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: hsl(var(--color-neutral-300)); 
+  transition: color 300ms ease-in-out;
+}
+
+.header__item a:hover {
+  color: hsl(var(--color-neutral-400));
+}
+
+.header :global(.login),
+.header :global(.signup) {
+  display: none;
+}
+
+.header :global(.login) {
+  margin-right: 2.25rem;
+}
+
+.hamburger {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.3125rem;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header__logo {
+    margin-top: 7px;
+  }
+
+  .header__nav {
+    display: flex;
+  }
+
+  .header :global(.login),
+  .header :global(.signup) {
+    display: block;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+}
+
+.hamburger span,
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 0.1875rem;
+  background-color: hsla(var(--color-neutral-300));
+  transition:
+    top 200ms 200ms,
+    transform 200ms,
+    background-color 200ms 100ms,
+    -webkit-transform 200ms;
+}
+
+.hamburger::before {
+  top: 0;
+}
+
+.hamburger::after {
+  bottom: 0;
+}
+
+.hamburger.active span {
+  background-color: transparent;
+}
+
+.hamburger.active::before,
+.hamburger.active::after {
+  transition:
+    top 200ms,
+    transform 200ms 140ms,
+    -webkit-transform 200ms 140ms;
+}
+
+.hamburger.active::before {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+.hamburger.active::after {
+  bottom: 9px;
+  transform: rotate(45deg);
+}
+
+.mobile-modal-nav,
+.modal__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-modal-nav {
+  position: absolute;
+  right: 0;
+  max-width: 22.5rem;
+  margin-inline: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--color-neutral-100));
+  background-color: hsl(var(--color-primary-dark-violet));
+  border-radius: 0.625rem;
+}
+
+.modal__nav {
+  width: 100%;
+  border-bottom: 1px solid hsla(var(--color-neutral-300), 0.25);
+}
+
+.modal__nav a {
+  margin-bottom: 1.875rem;
+}
+
+.mobile-modal-nav :global(.login) {
+  margin-block: 2rem 1.5rem;
+}

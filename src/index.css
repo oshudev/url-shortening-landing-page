@@ -25,6 +25,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.scroll-lock {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -40,4 +44,9 @@ button {
 ul,
 ol {
   list-style: none;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 69.375rem;
 }
