@@ -21,6 +21,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 0.9375rem;
   line-height: 1.2;
+  color: hsl(var(--color-neutral-300));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,4 +50,8 @@ ol {
 .container {
   margin-inline: auto;
   max-width: 69.375rem;
+}
+
+h1, h2, h3 {
+  color: hsl(var(--color-neutral-400));
 }
