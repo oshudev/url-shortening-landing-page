@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   padding-bottom: 10.5rem;
+  background-color: hsl(var(--color-neutral-100));
 }
 
 .hero__illustration {
