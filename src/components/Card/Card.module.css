@@ -1,0 +1,29 @@
+.card {
+  margin-top: 1.5rem;
+  background-color: hsl(var(--color-neutral-100));
+  border-radius: 0.3125rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 2.25rem;
+}
+
+.card__source {
+  padding: 0.375rem 1rem;
+  color: hsl(var(--color-neutral-400));
+  border-bottom: 1px solid hsla(var(--color-neutral-300), 0.25);
+}
+
+.card__link {
+  padding: 0.375rem 1rem 1rem;
+  color: hsl(var(--color-primary-cyan));
+}
+
+.card__button {
+  width: 100%;
+}
+
+.card__button[data-copy='true'] {
+  background-color: hsl(var(--color-primary-dark-violet));
+}

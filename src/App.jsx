@@ -1,5 +1,6 @@
 import { Header } from './sections/Header';
 import { Hero } from './sections/Hero';
+import { UrlShortener } from './sections/UrlShortener';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <UrlShortener />
       </main>
     </>
   );
