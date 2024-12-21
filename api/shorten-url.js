@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
-    return res.status(200).json({ success: true, shortUrl: data.result_url });
+    return res.status(200).json({ success: true, result_url: data.result_url });
   } catch {
     return res.status(500).json({
       success: false,
