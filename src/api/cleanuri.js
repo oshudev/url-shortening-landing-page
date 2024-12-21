@@ -4,9 +4,7 @@ export async function shortenUrl(longUrl) {
     const encodedUrl = encodeURIComponent(sanitizedUrl);
 
     const apiUrl =
-      import.meta.env.MODE === 'development'
-        ? '/api'
-        : 'https://cleanuri.com/api/v1/shorten';
+      import.meta.env.MODE === 'development' ? '/api' : '/api/shorten-url';
 
     const response = await fetch(apiUrl, {
       method: 'POST',
