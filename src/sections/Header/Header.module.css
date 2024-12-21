@@ -24,7 +24,7 @@
 .header__item a {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: hsl(var(--color-neutral-300)); 
+  color: hsl(var(--color-neutral-300));
   transition: color 300ms ease-in-out;
 }
 
@@ -39,6 +39,12 @@
 
 .header :global(.login) {
   margin-right: 2.25rem;
+  font-weight: 700;
+  transition: color 300ms ease;
+}
+
+.header :global(.login):hover {
+  color: hsl(var(--color-neutral-400));
 }
 
 .hamburger {
