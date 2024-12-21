@@ -1,20 +1,44 @@
 import { useState } from 'react';
-
 import { useMediaQuery } from '@uidotdev/usehooks';
 
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 
+import { shortenUrl } from '@/api/cleanuri';
+
 import styles from './UrlShortener.module.css';
 
 function UrlShortener() {
-  const [error, setError] = useState(false);
+  const [submittedUrl, setSubmittedUrl] = useState('');
+  const [longUrl, setLongUrl] = useState('');
+  const [shortUrl, setShortUrl] = useState('');
+  const [error, setError] = useState('');
   const isTablet = useMediaQuery('only screen and (min-width: 768px)');
+
+  const submit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (!longUrl.trim()) {
+      setError('Please add a link');
+      return;
+    }
+
+    const result = await shortenUrl(longUrl);
+
+    if (!result.success) {
+      setError(result.error);
+      return;
+    }
+
+    setSubmittedUrl(longUrl);
+    setShortUrl(result.shortUrl);
+  };
 
   return (
     <section className={styles['url-shortener']}>
       <div className="container">
-        <form className={styles.form}>
+        <form onSubmit={submit} className={styles.form}>
           <div
             className={`${styles.form__control} ${error ? styles.error : ''}`}
           >
@@ -22,19 +46,18 @@ function UrlShortener() {
               type="text"
               placeholder="Shorten a link here..."
               className={styles.form__input}
+              value={longUrl}
+              onChange={(e) => setLongUrl(e.target.value)}
             />
             {error && (
-              <span className={styles['form__error-msg']}>
-                Please add a link
-              </span>
+              <span className={styles['form__error-msg']}>{error}</span>
             )}
           </div>
-          <Button size={isTablet ? 'lg' : 'md'}>Shorten It!</Button>
+          <Button type="submit" size={isTablet ? 'lg' : 'md'}>
+            Shorten It!
+          </Button>
         </form>
-        <Card
-          source="https://www.frontendmentor.io"
-          shortenLink="https://rel.ink/k4lKyk"
-        />
+        {shortUrl && <Card source={submittedUrl} shortenLink={shortUrl} />}
       </div>
     </section>
   );
