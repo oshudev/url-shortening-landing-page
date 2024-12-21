@@ -44,16 +44,16 @@ function Footer() {
             ))}
           </nav>
           <div className={styles.footer__social}>
-            <a href="#">
+            <a href="#" aria-label="facebook.com">
               <FacebookIcon />
             </a>
-            <a href="#">
+            <a href="#" aria-label="twitter.com">
               <TwitterIcon />
             </a>
-            <a href="#">
+            <a href="#" aria-label="pinterest.com">
               <PinterestIcon />
             </a>
-            <a href="#">
+            <a href="#" aria-label="instagram.com">
               <InstagramIcon />
             </a>
           </div>
