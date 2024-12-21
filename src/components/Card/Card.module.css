@@ -7,10 +7,6 @@
 .card p {
   font-size: 1rem;
   line-height: 2.25rem;
-  text-overflow: ellipsis;
-  word-break: keep-all;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .card__source {
@@ -22,6 +18,15 @@
 .card__link {
   padding: 0.375rem 1rem 1rem;
   color: hsl(var(--color-primary-cyan));
+}
+
+.card p,
+.card__source,
+.card__link {
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__button {
@@ -36,6 +41,7 @@
   .card,
   .card__link {
     display: flex;
+    gap: 1.5rem;
     justify-content: space-between;
   }
 
@@ -48,19 +54,20 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    word-break: break-word;
   }
 
   .card__source,
   .card__link {
     padding: 0;
-  }
-
-  .card__link {
-    gap: 1.5rem;
+    max-width: 100%;
   }
 
   .card__source {
+    flex: 1;
     padding-left: 0.5rem;
+    max-width: 33.75rem;
+    width: 100%;
     border: none;
   }
 
