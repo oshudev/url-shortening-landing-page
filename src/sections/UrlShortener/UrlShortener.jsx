@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { useMediaQuery } from '@uidotdev/usehooks';
 
 import { Button } from '@/components/Button';
@@ -57,7 +58,23 @@ function UrlShortener() {
             Shorten It!
           </Button>
         </form>
-        {shortUrl && <Card source={submittedUrl} shortenLink={shortUrl} />}
+        <AnimatePresence mode="popLayout">
+          {shortUrl && (
+            <motion.div
+              key={shortUrl}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.3 }}
+              layout
+            >
+              <Card source={submittedUrl} shortenLink={shortUrl} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

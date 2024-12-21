@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 
 import { useMediaQuery } from '@uidotdev/usehooks';
 
@@ -67,23 +68,31 @@ function Header() {
           </button>
         </div>
       </header>
-      {isMobileNavOpen && (
-        <div className={styles['mobile-modal-nav']}>
-          <nav className={styles.modal__nav}>
-            {navData.map((item, index) => (
-              <a href={item.link} key={index}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a href="#" className="login">
-            Login
-          </a>
-          <Button variant="rounded" size="md" asChild>
-            <a href="#">Sign Up</a>
-          </Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileNavOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className={styles['mobile-modal-nav']}
+          >
+            <nav className={styles.modal__nav}>
+              {navData.map((item, index) => (
+                <a href={item.link} key={index}>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <a href="#" className="login">
+              Login
+            </a>
+            <Button variant="rounded" size="md" asChild>
+              <a href="#">Sign Up</a>
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -1,7 +1,10 @@
 .url-shortener {
+  padding-inline: 1.5rem;
+}
+
+.url-shortener :global(.container) {
   position: relative;
   top: -5rem;
-  padding-inline: 1.5rem;
 }
 
 .form {
@@ -68,7 +71,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .url-shortener {
+  .url-shortener :global(.container) {
     top: -5.3125rem;
   }
 
