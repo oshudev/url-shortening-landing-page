@@ -1,0 +1,132 @@
+.features {
+  margin-bottom: 5rem;
+  padding-inline: 1.5rem;
+}
+
+.features__header {
+  margin-bottom: 5.75rem;
+  text-align: center;
+}
+
+.features__title {
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+
+.features__desc {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.features__list {
+  position: relative;
+  display: flex;
+  gap: 5.75rem;
+}
+
+.features__list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5rem;
+  height: 100%;
+  background-color: hsl(var(--color-primary-cyan));
+}
+
+.card {
+  position: relative;
+  padding: 2rem;
+  background-color: hsl(var(--color-neutral-100));
+  border-radius: 0.3125rem;
+}
+
+.card__icon {
+  --dim: 5.5rem;
+  position: absolute;
+  top: -2.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: hsl(var(--color-primary-dark-violet));
+  border-radius: 50%;
+}
+
+.card__title {
+  margin-top: 2.75rem;
+  font-size: 1.375rem;
+}
+
+.card__desc {
+  margin-block: 0.75rem 0.625rem;
+  line-height: 1.625rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .features__list {
+    flex-direction: column;
+  }
+
+  .card {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .features {
+    margin-block: 2.1875rem 7.5rem;
+  }
+
+  .features__list {
+    gap: 1.875rem;
+  }
+
+  .features__list::before {
+    width: 100%;
+    height: 0.5rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .features__header {
+    max-width: 33.75rem;
+    margin-inline: auto;
+    margin-bottom: 6.25rem;
+  }
+
+  .features__title {
+    margin-bottom: 1.125rem;
+    font-size: 2.5rem;
+  }
+
+  .features__desc {
+    font-size: 1.125rem;
+  }
+}
+
+@media only screen and (min-width:  1024px) {
+  .features__list {
+    height: 27.375rem;
+  }
+
+  .card {
+    min-height: 16.6875rem;
+  }
+
+  .card:first-child {
+    margin-bottom: auto;
+  }
+
+  .card:nth-child(2) {
+    margin-block: auto;
+  }
+
+  .card:last-child {
+    margin-top: auto;
+  }
+}
