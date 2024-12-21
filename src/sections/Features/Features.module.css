@@ -109,9 +109,9 @@
   }
 }
 
-@media only screen and (min-width:  1024px) {
+@media only screen and (min-width: 1024px) {
   .features__list {
-    height: 27.375rem;
+    height: 22.1875rem;
   }
 
   .card {

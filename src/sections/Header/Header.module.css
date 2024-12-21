@@ -58,6 +58,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .header {
+    padding-block: 3rem;
+  }
+
   .header__logo {
     margin-top: 7px;
   }
