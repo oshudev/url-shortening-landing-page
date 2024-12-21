@@ -20,7 +20,9 @@ function Card({ source, shortenLink }) {
         <p>{source}</p>
       </div>
       <div className={styles.card__link}>
-        <p>{shortenLink}</p>
+        <div className={styles.card__destination}>
+          <p>{shortenLink}</p>
+        </div>
         <Button
           onClick={() => copyToClipboard(shortenLink)}
           size="sm"

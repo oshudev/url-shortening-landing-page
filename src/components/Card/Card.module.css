@@ -7,6 +7,10 @@
 .card p {
   font-size: 1rem;
   line-height: 2.25rem;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__source {
@@ -26,4 +30,38 @@
 
 .card__button[data-copy='true'] {
   background-color: hsl(var(--color-primary-dark-violet));
+}
+
+@media only screen and (min-width: 768px) {
+  .card,
+  .card__link {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    padding: 1rem 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.25rem;
+  }
+
+  .card__source,
+  .card__link {
+    padding: 0;
+  }
+
+  .card__link {
+    gap: 1.5rem;
+  }
+
+  .card__source {
+    padding-left: 0.5rem;
+    border: none;
+  }
+
+  .card__button {
+    width: 6.375rem;
+  }
 }
